@@ -445,7 +445,7 @@ You can use it as follows:
         $ # Encrypt using {0} and decrypt using openssl.
         $ echo 'Lorem ipsum dolor sit amet' | \\
             {0} -e -m sha512 -p secret | \\
-            openssl enc -d -aes-256-cbc -md sha1=512 -base64 -salt -pass pass:secret
+            openssl enc -d -aes-256-cbc -md sha512 -base64 -salt -pass pass:secret
         Lorem ipsum dolor sit amet
 
     EXAMPLE 7:
