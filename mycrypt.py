@@ -108,8 +108,6 @@ def encrypt(password, plaintext, chunkit=True, msgdgst='md5'):
     ciphertext = cipher.encrypt(padded_plaintext)
 
     # Make openssl compatible.
-    # I first discovered this when I wrote the C++ Cipher class.
-    # CITATION: http://projects.joelinoff.com/cipher-1.1/doxydocs/html/
     openssl_ciphertext = b'Salted__' + salt + ciphertext
     b64 = base64.b64encode(openssl_ciphertext)
     if not chunkit:
